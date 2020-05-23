@@ -1,0 +1,48 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 800px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.info {
+    padding: 8px 16px;
+    text-align: right;
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #a1a1a1;
+    font-family: monospace;
+}
+
+.screen {
+    padding: 16px 0;
+    background-color: black;
+    width: 100%;
+    height: 130px;
+    line-height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    color: #3cf78a;
+    font-family: monospace;
+    font-size: 84px;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.panel {
+    padding: 32px 48px;
+}
+
+body {
+    background-color: #E0E0E0;
+}
+
+button {
+    padding: 8px 10px;
+    margin-right: 16px;
+}

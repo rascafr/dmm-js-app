@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>DMMjs app</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel='stylesheet' href='style.css' type='text/css' media='all' />
+</head>
+
+<body>
+    <div id="device-info" class="info">Connected device: none</div>
+    <div id="device-voltage" class="screen"></div>
+    <div class="panel">
+        <button id="bpInfo">INFO</button>
+        <button id="bpDCV">DC V</button>
+        <button id="bpACV">AC V</button>
+    </div>
+    <script type="text/javascript" src="gui.js"></script>
+</body>
+</html>
