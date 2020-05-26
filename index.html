@@ -11,11 +11,30 @@
 
 <body>
     <div id="device-info" class="info">Connected device: none</div>
-    <div id="device-voltage" class="screen"></div>
-    <div class="panel">
-        <button id="bpInfo">INFO</button>
-        <button id="bpDCV">DC V</button>
-        <button id="bpACV">AC V</button>
+    <div class="left-panel">
+        <div id="device-voltage" class="screen"></div>
+        <div class="panel">
+            <button id="bpDCV">DC V</button>
+            <button id="bpDCA">DC I</button>
+            <button id="bpACV">AC V</button>
+            <button id="bpACA">AC I</button>
+            <button id="bp2W">Ω 2W</button>
+            <button id="bp4W">Ω 4W</button>
+            <button id="bpFreq">Freq</button>
+            <button id="bpPeriod">Period</button>
+            <button id="bpCont">Cont</button>
+            <button id="bpSingle" class="blue-button">Single</button>
+            <button id="bpLoop" class="blue-button">Loop</button>
+            <button id="bpInfo" class="blue-button">Info</button>
+        </div>
+    </div>
+    <div class="input-panel">
+        <div class="input-voltage positive"></div>
+        <div class="input-voltage positive"></div>
+        <div class="input-voltage negative"></div>
+        <div class="input-voltage negative"></div>
+        <div class="input-voltage invisible"></div>
+        <div class="input-voltage positive"></div>
     </div>
     <script type="text/javascript" src="gui.js"></script>
 </body>

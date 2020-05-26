@@ -9,38 +9,41 @@ let mainWindow = null;
 function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
-        height: 300,
+        height: 335,
         webPreferences: {
             nodeIntegration: true
         }
-    })
-    mainWindow.loadFile('index.html')
+    });
+    mainWindow.loadFile('index.html');
+    mainWindow.setResizable(false);
 }
-app.whenReady().then(createWindow)
+app.whenReady().then(createWindow);
 
 // closing / macos management
 app.on('window-all-closed', () => {
-    Control.disconnect()
+    Control.disconnect().then(() => process.exit());
     if (process.platform !== 'darwin') {
-        app.quit()
+        app.quit();
     }
-})
+});
 
 app.on('activate', () => {
     // macos: recreate window
-    if (win === null) {
-        createWindow()
+    if (mainWindow === null) {
+        createWindow();
     }
-})
+});
 
 ipc.on('getInfo', (event, arg) => {
     event.reply('info', Control.getInfo());
-})
+});
 
-ipc.on('test', function (event, arg) {
-    Control.read().then(voltage => {
-        event.reply('voltage', Math.round(voltage * 100000 + Number.EPSILON) / 100000 + ' V')
+ipc.on('measure', function (event, arg) {
+    Control.read(arg).then(measure => {
+        event.reply('measureValue', measure);
     });
-})
+});
 
-Control.connect() // connect to DMM
+Control.connect().then(() => { // connect to DMM
+    mainWindow.webContents.send('info', Control.getInfo());
+});
